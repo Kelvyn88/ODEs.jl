@@ -10,6 +10,7 @@ n = length(t)
             t = [t, tspan[end]]
             n += 1
       end
+
 x, y1 = f(t[1],y0)
 eq = length(y1) # Test the number of equations in f
 y = ones(int64(n),eq) .* y0'
