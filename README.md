@@ -6,7 +6,7 @@ Book: Steven C. Chapra, Applied Numerical Method with MATLAB® for Engineers and
 Pull requests are always highly welcome to fix bugs, add solvers, or anything else!
 
 # Current status of the project
-The first release (beta), v0.0, contains the basic functionality including:
+The first release v0.0.1, contains the basic functionality including:
 
 * Euler's method
 * Heun's method with iterations
