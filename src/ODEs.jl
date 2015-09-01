@@ -1,5 +1,7 @@
 module ODEs
 
-# package code goes here
+include("euler.jl")
+include("heun.jl")
+include("rk5.jl")
 
-end # module
+end
