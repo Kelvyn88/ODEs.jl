@@ -1,3 +1,12 @@
 # ODEs
 
-[![Build Status](https://travis-ci.org/Kelvyn88/ODEs.jl.svg?branch=master)](https://travis-ci.org/Kelvyn88/ODEs.jl)
+ODEs contains solvers for Ordinary Differential Equations
+
+Euler
+Heun
+Runge Kutta 
+Stiff solvers
+
+
+Working...
+Available soon!
