@@ -1,4 +1,4 @@
-function rk5(f, tspan, y0; h = 1, iter = false)
+function rk4(f, tspan, y0; h = 1, iter = false)
 #Runge Kutta 5th order
 t = floor((tspan[end] - tspan[1])/h)
 y = zeros(int64(t) + 1,1)
