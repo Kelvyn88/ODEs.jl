@@ -25,6 +25,6 @@ all of which have the following basic API:
 * AbsTol, Error tolerance (default =  0.00001)
 
 
-Developed at the Instituto Tecnologico de Orizaba, Mexico.
+Developed at the Instituto Tecnologico de Orizaba, Mexico.\n
 PhD Kelvyn Baruc Sánchez Sánchez
 email: kelvyn.baruc@gmail.com
