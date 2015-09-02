@@ -7,7 +7,7 @@ This is an unregistred package. To install on Julia use:
 
     Pkg.clone("git://github.com/Kelvyn88/ODEs.jl")
     
-Pull requests are always highly welcome to fix bugs, add solvers, or anything else!
+To track changes across versions, the package should be registered into the local METADATA. Pull requests are always highly welcome to fix bugs, add solvers, or anything else!
 
 # Current status of the project
 The first release v0.0.1, contains the basic functionality including:
@@ -27,3 +27,4 @@ all of which have the following basic API:
 
 Developed at the Instituto Tecnologico de Orizaba, Mexico.
 PhD Kelvyn Baruc Sánchez Sánchez
+email: kelvyn.baruc@gmail.com
