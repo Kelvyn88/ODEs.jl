@@ -1,33 +1,42 @@
-function heun(f, tspan, y0; h = 1, iter = false, AbsTol = 0.00001)
-t = floor((tspan[end] - tspan[1])/h)
-	y = zeros(int64(t) + 1,1)
-	y[1,1] = y0
-	j = 1
+function heun(f, tspan, y0; h = 1, AbsTol = 0.00001)
+# Euler method
+# Made by PhD Kelvyn Baruc SS
+# Steven C. Chapra, Applied Numerical Method with MATLAB® for Engineers and Scientists
+# Third Edition, 2008
 
-	for i=tspan[1]:h:(tspan[end]-h)
-		s1 = f(i,y[j,1])
-		y1 = y[j,1] + s1 * h
-		s2 = f(i+h,y1)
-		y2 = y[j,1] + ((s1 + s2)/2) * h
+t = tspan[1]:h:tspan[end]
+n = length(t)
 
-		err = 100
-		while err >= AbsTol
-			y3 = y[j,1] + ((f(i,y[j,1]) + f(i+h,y2)) / 2) * h
-			err = abs((y3 - y2)/y3) * 100
-			y2 = y3
-			y[j+1,1] = y3
-		end
+      if t[n] < tspan[end]
+            t = [t, tspan[end]]
+            n += 1
+      end
 
-		if iter == true
-			if j == 1
-				println("Iter\t\t X\t\t\t Y")
-				@printf("%i\t\t %f\t\t %f\n",0,i,y[1,1])
-				@printf("%i\t\t %f\t\t %f\n",j,i+h,y[j+1,1])
-			else
-				@printf("%i\t\t %2f\t\t %f\n",j,i+h,y[j+1,1])
-			end
-		end
-		j += 1
+x, y1 = f(t[1],y0)
+eq = length(y1) # Test the number of equations in f
+y = ones(int64(n),eq) .* y0'
+y1 = zeros(int64(n),eq)
+y2 = zeros(int64(n),eq)
+y3 = zeros(int64(n),eq)
+
+	for i=1:n-1 # Solve for each x
+            for j=1:eq # Solve for each equation in f
+                  x1, s1 = f(t[i],y[i,:])
+                  y1[i,j] = y[i,j] + s1[j] * (t[i+1] - t[i])
+
+                  x2, s2 = f(t[i+1],y1[i,:])
+                  y2[i,j] = y[i,j] + ((s1[j] + s2[j])/2) * (t[i+1] - t[i])
+
+                  err = 100
+                  while err >= AbsTol
+                        x1, s1 = f(t[i],y[i,:])
+                        x1, s2 = f(t[i+1],y2[i,:])
+                        y3[i,j] = y[i,j] + ((s1[j] + s2[j]) / 2) * (t[i+1] - t[i])
+                        err = abs((y3[i,j] - y2[i,j])/y3[i,j]) * 100
+                        y2[i,j] = y3[i,j]
+                        y[i+1,j] = y3[i,j]
+                  end
+            end
 	end
-	return y, tspan[1]:h:tspan[end]
+	return t, y
 end
