@@ -1,5 +1,7 @@
 # ODEs
 
+[![Build Status](https://travis-ci.org/Kelvyn88/ODEs.jl.svg?branch=master)](https://travis-ci.org/Kelvyn88/ODEs.jl)
+
 Basic Ordinary Differential Equation solvers implemented in Julia.
 Book: Steven C. Chapra, Applied Numerical Method with MATLAB® for Engineers and Scientists. Third Edition, 2008
 
