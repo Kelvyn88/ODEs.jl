@@ -12,8 +12,8 @@ t = linspace(tspan[1], tspan[end],tint)
 y = zeros(Int(tint), length(y0))
 y[1,:] = y0
 
-      try
-            error = f(t[1],y0)
+      # try
+      #       error = f(t[1],y0)
 
             for i=1:1:(length(t) - 1)
                         k1 = f(t[i],y[i,:])
@@ -26,8 +26,8 @@ y[1,:] = y0
             end
 
              t, y;
-      catch
-            throw(ErrorException("The number of initial values does not match the number of equations"))
-      end
+      # catch
+      #       throw(ErrorException("The number of initial values does not match the number of equations"))
+      # end
 
 end
