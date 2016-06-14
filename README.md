@@ -12,10 +12,12 @@ This is an unregistred package. To install on Julia use:
 To track changes across versions, the package should be registered into the local METADATA. Pull requests are always highly welcome to fix bugs, add solvers, or anything else!
 
 # Current status of the project
-The first release v0.0.1, contains the basic functionality including:
+Current release (v0.0.7), contains the basic functionality including:
 
-* Euler's method (euler)
-* Heun's method with iterations (heun)
+* Euler method (euler)
+* Heun method with iterations (heun)
+* Runge Kutta 3th order (rk3)
+* Runge Kutta 4th order (rk4)
 * Runge Kutta 5th order (rk5)
 
 all of which have the following basic API:
