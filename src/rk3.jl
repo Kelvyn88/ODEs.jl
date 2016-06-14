@@ -13,7 +13,7 @@ y = zeros(Int(tint), length(y0))
 y[1,:] = y0
 
       try
-            f(t,y0)
+            error = f(t[1],y0)
 
             for i=1:1:(length(t) - 1)
                         k1 = f(t[i],y[i,:])
