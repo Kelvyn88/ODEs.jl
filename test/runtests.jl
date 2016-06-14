@@ -8,13 +8,12 @@ println("Testing solver: rk4")
 t, y = rk4(f, [0 4], [2 2])
 
 @test((y[end,1]-75.33896)/75.33896 < 0.01)
-println("Solver rk4 passed\n")
 print_with_color(:green,"Solver rk4 passed\n")
 
 println("Testing solver: rk5")
 t, y = rk4(f, [0 4], [2 2])
 
 @test((y[end,1]-75.33896)/75.33896 < 0.01)
-println("Solver rk5 passed\n")
+print_with_color(:green,"Solver rk5 passed\n")
 
 println("All looks OK")

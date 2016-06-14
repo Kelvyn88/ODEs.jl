@@ -25,7 +25,7 @@
 
              return t, y
        catch
-              error("The number of initial values does not match the number of equations")
+              throw(ErrorException("The number of initial values does not match the number of equations")
        end
 
  end
