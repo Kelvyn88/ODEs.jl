@@ -2,7 +2,6 @@
       Heun's Method (with iteration)
       Supported by:
       -PhD Kelvyn B. Sánchez kelvyn.baruc@gmail.com
-      -MSc Lorena S. Galicia lorys92@gmail.com
  """ ->
 function heun(f, tspan, y0; h = 1, AbsTol = 0.00001)
 
@@ -16,7 +15,8 @@ n = length(t)
 
 y1 = f(t[1],y0)
 eq = length(y1) # Test the number of equations in f
-y = ones(Int(n),eq) .* y0
+y = zeros(Int(n),eq)
+y[1,:] = y0
 y1 = zeros(Int(n),eq)
 y2 = zeros(Int(n),eq)
 y3 = zeros(Int(n),eq)
