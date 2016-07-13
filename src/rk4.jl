@@ -38,7 +38,7 @@ y[1,:] = y0
                   for j=1:length(y0)
                         k4[1,j] = f(t[i] + h,ymid)[j]
                   end
-                  
+
                   for j=1:length(y0)
                         y[i+1,j] = y[i,j] + (1/6)*(k1[1,j] + 2*(k2[1,j] + k3[1,j]) + k4[1,j])*h
                   end
