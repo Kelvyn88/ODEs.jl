@@ -6,7 +6,9 @@
 
 function rk4(f, tspan, y0; h = 1)
 tint = floor((tspan[end] - tspan[1])/h) + 1
-t = linspace(tspan[1], tspan[end],tint)
+t = range(tspan[1],tspan[end],length=tint)
+
+#t = linspace(tspan[1], tspan[end],tint)
 y = zeros(Int(tint), length(y0))
 y[1,:] = y0
 
